@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 13:11:55 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/12 12:47:16 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/04/12 13:59:12 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,13 @@ void	EditProgram::writeToReplaceFile(std::string replaceText)
 {
 	std::ofstream	replaceFile;
 	std::string		replaceFileName;
+	int				dot;
 
-	replaceFileName.append(this->fileName).append(".replace");
+	dot = this->fileName.rfind(".");
+	if (dot > 0)
+		replaceFileName = this->fileName.substr(0, dot).append(".replace");
+	else
+		replaceFileName = this->fileName.append(".replace");
 	replaceFile.open(replaceFileName.data());
 	replaceFile << replaceText;
 	replaceFile.close();
