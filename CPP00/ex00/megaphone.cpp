@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:46:18 by rabustam          #+#    #+#             */
-/*   Updated: 2023/03/30 20:03:36 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/04/18 11:45:36 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int main(int argc, char **argv)
 		std::cout << input;
 		i++;
 	}
+	std::cout << "\n";
 	return (0);
 }

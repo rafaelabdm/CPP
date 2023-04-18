@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:46:02 by rabustam          #+#    #+#             */
-/*   Updated: 2023/03/31 12:22:31 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/04/18 12:00:20 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Contact
 	public:
 	Contact();
 	Contact(std::string fn, std::string ln, std::string nn, std::string p, std::string ds);
-	// virtual ~Contact();
 	void setContact(std::string fn, std::string ln, std::string nn, std::string ds);
 	void setPhone(std::string p);
 	std::string getFirstName();

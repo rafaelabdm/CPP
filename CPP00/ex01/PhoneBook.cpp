@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:50:11 by rabustam          #+#    #+#             */
-/*   Updated: 2023/03/31 12:31:44 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/04/18 11:59:03 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,17 @@ void PhoneBook::displayPhoneBook() {
 		formatPrint(this->contacts[i].getLastName());
 		std::cout << "|";
 		formatPrint(this->contacts[i].getNickName());
-		std::cout << std::endl;
+		std::cout << "\n";
 	}
-	std::cout << std::endl;
+	std::cout << "\n";
 }
 
 void PhoneBook::displayContactInfo(int index) {
-	std::cout << "\nFirst Name: " << this->contacts[index].getFirstName() << std::endl;
-	std::cout << "Last Name: " << this->contacts[index].getLastName() << std::endl;
-	std::cout << "Nickname: " << this->contacts[index].getNickName() << std::endl;
-	std::cout << "Phone: " << this->contacts[index].getPhone() << std::endl;
-	std::cout << "Darkest Secret: " << this->contacts[index].getDarkestSecret() << std::endl << std::endl;
+	std::cout << "\nFirst Name: " << this->contacts[index].getFirstName() << "\n";
+	std::cout << "Last Name: " << this->contacts[index].getLastName() << "\n";
+	std::cout << "Nickname: " << this->contacts[index].getNickName() << "\n";
+	std::cout << "Phone: " << this->contacts[index].getPhone() << "\n";
+	std::cout << "Darkest Secret: " << this->contacts[index].getDarkestSecret() << "\n\n";
 }
 
 void PhoneBook::addContact(Contact c) {
