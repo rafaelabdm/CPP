@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:50:11 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/18 11:59:03 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/04/18 14:51:52 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void PhoneBook::formatPrint(std::string print) {
 }
 
 void PhoneBook::displayPhoneBook() {
-	std::cout << "         nº|First Name |Last Name |Nickname\n";
+	std::cout << "     Index|First Name| Last Name|  Nickname\n";
 	for (int i = 0; i < 8; i++) {
 		std::cout << "-----------------------------------------------------\n";
-		std::cout << std::setw(10) << i << " | ";
+		std::cout << std::setw(10) << i << "|";
 		formatPrint(this->contacts[i].getFirstName());
 		std::cout << "|";
 		formatPrint(this->contacts[i].getLastName());

@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 18:46:18 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/18 11:45:36 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/04/18 14:52:45 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,10 @@ int main(int argc, char **argv)
 	std::cout << "\n";
 	return (0);
 }
+
+/*
+Subject tests:
+1 - ./megaphone "shhhhh... I think the students are asleep..."
+2 - ./megaphone Damnit " ! " "Sorry students, I thought this thing was off."
+3 - ./megaphone
+*/

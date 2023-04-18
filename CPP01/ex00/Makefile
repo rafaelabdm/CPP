@@ -21,7 +21,7 @@ clean:
 fclean:
 	${RM} ${OBJ} ${NAME}
 
-re: all
+re: fclean all
 
 %.o: %.cpp
 	${CPP} ${CPPFLAGS} -c $< -o $@

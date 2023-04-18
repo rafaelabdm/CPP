@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 12:01:20 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/18 12:09:52 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/04/18 14:51:03 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	search(PhoneBook *book)
 
 	std::cout << "Choose index of the contact you want info on: ";
 	std::getline(std::cin, input);
+	if (std::cin.eof())
+		return ;
 	std::istringstream convertion(input);
 	convertion >> index;
 	if (index > 7 || index < 0)
