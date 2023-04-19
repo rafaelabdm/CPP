@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 13:11:55 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/12 13:59:12 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/04/19 10:19:34 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,17 @@ std::string	EditProgram::readFromOriginalFile()
 {
 	std::ifstream originalFile;
 	std::string line;
-	std::string originalText;
+	std::string originalText = "\0";
 
 	originalFile.open(this->fileName.data());
-	if (originalFile.is_open())
+	if (!originalFile.is_open())
+		return (originalText);
+	while (getline (originalFile, line))
 	{
-		while (getline (originalFile, line))
-		{
-			originalText.append(line);
-			originalText.append("\n");
-		}
-		originalFile.close();
+		originalText.append(line);
+		originalText.append("\n");
 	}
+	originalFile.close();
 	return (originalText);
 }
 
@@ -85,6 +84,11 @@ void	EditProgram::makeReplaceFile()
 	std::string replaceText;
 
 	originalText = readFromOriginalFile();
+	if (originalText.empty())
+	{
+		std::cout << "\033[1;41mInvalid file - does not exists / is empty.\033[0m\n";
+		return ;
+	}
 	replaceText = editText(originalText);
 	writeToReplaceFile(replaceText);
 }
