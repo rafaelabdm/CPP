@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:22:06 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/18 15:43:02 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/04/20 10:25:50 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	main(int argc, char **argv)
 {
 	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	int			i = 0;
 	Harl		harl;
+	int			i = 0;
 	
 	if (argc != 2)
 	{
