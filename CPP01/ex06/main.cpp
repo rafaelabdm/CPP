@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:22:06 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/20 10:25:50 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/04/20 11:06:45 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,36 +37,34 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	
-	while (i < 4)
+	switch(i)
 	{
-		switch(i)
+		case 0:
 		{
-			case 0:
-			{
-				std::cout << "[DEBUG]\n";
-				harl.complain("DEBUG");
-				break ;
-			}
-			case 1:
-			{
-				std::cout << "[INFO]\n";
-				harl.complain("INFO");
-				break ;
-			}
-			case 2:
-			{
-				std::cout << "[WARNING]\n";
-				harl.complain("WARNING");
-				break ;
-			}
-			default:
-			{
-				std::cout << "[ERROR]\n";
-				harl.complain("ERROR");
-			}
+			std::cout << "[DEBUG]\n";
+			harl.complain("DEBUG");
+			std::cout << "\n";
+			__attribute__((fallthrough));
 		}
-		std::cout << "\n";
-		i++;
+		case 1:
+		{
+			std::cout << "[INFO]\n";
+			harl.complain("INFO");
+			std::cout << "\n";
+			__attribute__((fallthrough));
+		}
+		case 2:
+		{
+			std::cout << "[WARNING]\n";
+			harl.complain("WARNING");
+			std::cout << "\n";
+			__attribute__((fallthrough));
+		}
+		default:
+		{
+			std::cout << "[ERROR]\n";
+			harl.complain("ERROR");
+			std::cout << "\n";
+		}
 	}
-	
 }
