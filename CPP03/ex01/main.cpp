@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:09:31 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/26 17:10:56 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:25:34 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,19 @@
 
 int	main(void)
 {
+	std::cout << "---------Instantiating ClapTrap---------\n";
 	ClapTrap rafa("Rafa");
+
+	std::cout << "\n---------Instantiating ScavTrap---------\n";
 	ScavTrap denis("Denis");
 
-	std::cout << "---------Rafa---------\n";
+	std::cout << "\n---------Rafa---------\n";
 	rafa.attack("enemy");
 
-	std::cout << "---------Denis---------\n";
+	std::cout << "\n---------Denis---------\n";
 	denis.attack("enemy");
 	
+	std::cout << "\n---------Destructors---------\n";
+
 	return (0);	
 }

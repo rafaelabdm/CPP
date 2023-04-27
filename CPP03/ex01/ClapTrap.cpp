@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:31:23 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/26 16:35:21 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:18:46 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap(std::string n): name(n)
 {
-	std::cout << YELLOW << "Default constructor called.\n" << RESET_COLOR;
+	std::cout << YELLOW << "ClapTrap (" << this->name <<  ") default constructor called.\n" << RESET_COLOR;
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
@@ -22,18 +22,18 @@ ClapTrap::ClapTrap(std::string n): name(n)
 
 ClapTrap::ClapTrap(const ClapTrap& a)
 {
-	std::cout << YELLOW << "Copy constructor called.\n" << RESET_COLOR;
+	std::cout << YELLOW << "ClapTrap (" << this->name <<  ") copy constructor called.\n" << RESET_COLOR;
 	*this = a;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << YELLOW << "Destructor called.\n" << RESET_COLOR;
+	std::cout << YELLOW << "ClapTrap (" << this->name <<  ") destructor called.\n" << RESET_COLOR;
 }
 
 ClapTrap& ClapTrap::operator = (const ClapTrap& a)
 {
-	std::cout << YELLOW << "Copy assingment constructor called.\n" << RESET_COLOR;
+	std::cout << YELLOW << "ClapTrap (" << this->name <<  ") copy assingment constructor called.\n" << RESET_COLOR;
 	this->name = a.name;
 	this->hitPoints = a.hitPoints;
 	this->energyPoints = a.energyPoints;
