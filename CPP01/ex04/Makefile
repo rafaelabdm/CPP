@@ -1,4 +1,4 @@
-NAME = edit_file
+NAME = myReplace
 
 SRC = main.cpp EditProgram.cpp
 
