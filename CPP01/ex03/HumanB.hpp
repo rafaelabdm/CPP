@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 16:12:59 by rabustam          #+#    #+#             */
-/*   Updated: 2023/03/31 17:09:38 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/09 13:11:41 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class HumanB
 	public:
 	HumanB(std::string n);
 	void	attack(void);
-	void	setWeapon(Weapon &new_weapon);
+	void	setWeapon(Weapon* new_weapon);
+	void	setWeapon(Weapon& new_weapon);
 };
 
 #endif
