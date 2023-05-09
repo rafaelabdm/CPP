@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 15:22:12 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/18 15:22:24 by rabustam         ###   ########.fr       */
+/*   Created: 2023/04/12 14:43:35 by rabustam          #+#    #+#             */
+/*   Updated: 2023/05/09 20:18:23 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,9 @@ void	Harl::error(void)
 
 void	Harl::complain( std::string level )
 {
-	void	(Harl::*func[4])(void) = {&Harl::debug, &Harl::error, &Harl::info, &Harl::warning};
+	void	(Harl::*func[4])(void) = { &Harl::info, &Harl::warning, &Harl::error, &Harl::debug};
 
-	if (level[0] != 'I')
-		(this->*func[level[0] % 4])();
-	else
-		(this->*func[2])();
+	if (level != ("DEBUG") && level != ("INFO") && level != ("WARNING") && level != ("ERROR"))
+		return ;
+	(this->*func[level[4] % 4])();
 }
