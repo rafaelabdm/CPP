@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:09:24 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/25 13:04:33 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:24:13 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ int	main(void)
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
+	
 	std::cout << b << std::endl;
+	
 	std::cout << Fixed::max( a, b ) << std::endl;
-
 	return (0);
 }
 

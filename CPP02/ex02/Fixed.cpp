@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:09:57 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/25 12:45:26 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:22:51 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,70 +52,70 @@ Fixed& Fixed::operator = (const Fixed&a)
 	return (*this);
 }
 
-bool Fixed::operator == (const Fixed&a)
+bool Fixed::operator == (const Fixed&a) const
 {
 	if (this->value == a.getRawBits())
 		return(true);
 	return (false);
 }
 
-bool Fixed::operator != (const Fixed&a)
+bool Fixed::operator != (const Fixed&a) const
 {
 	if (this->value != a.getRawBits())
 		return(true);
 	return (false);
 }
 
-bool Fixed::operator > (const Fixed&a)
+bool Fixed::operator > (const Fixed&a) const
 {
 	if (this->value > a.getRawBits())
 		return(true);
 	return (false); 
 }
 
-bool Fixed::operator < (const Fixed&a)
+bool Fixed::operator < (const Fixed&a) const
 {
 	if (this->value < a.getRawBits())
 		return(true);
 	return (false); 
 }
 
-bool Fixed::operator >= (const Fixed&a)
+bool Fixed::operator >= (const Fixed&a) const
 {
 	if (this->value >= a.getRawBits())
 		return(true);
 	return (false); 
 }
 
-bool Fixed::operator <= (const Fixed&a)
+bool Fixed::operator <= (const Fixed&a) const
 {
 	if (this->value <= a.getRawBits())
 		return(true);
 	return (false); 
 }
 
-Fixed Fixed::operator + (const Fixed&a)
+Fixed Fixed::operator + (const Fixed&a) const
 {
 	Fixed temp;
 	temp.setRawBits((this->toFloat() + a.toFloat()) * (1 << this->bits));
 	return(temp);
 }
 
-Fixed Fixed::operator - (const Fixed&a)
+Fixed Fixed::operator - (const Fixed&a) const
 {
 	Fixed temp;
 	temp.setRawBits((this->toFloat() - a.toFloat()) * (1 << this->bits));
 	return(temp);
 }
 
-Fixed Fixed::operator * (const Fixed&a)
+Fixed Fixed::operator * (const Fixed&a) const
 {
 	Fixed temp;
 	temp.setRawBits((this->toFloat() * a.toFloat()) * (1 << this->bits));
 	return(temp);
 }
 
-Fixed Fixed::operator / (const Fixed&a)
+Fixed Fixed::operator / (const Fixed&a) const
 {
 	Fixed temp;
 	if (a.getRawBits() != 0)
