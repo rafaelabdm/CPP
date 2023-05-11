@@ -6,13 +6,12 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:09:57 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/09 12:22:51 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:52:14 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-//cosnstructors/destructor
 Fixed::Fixed()
 {
 	// std::cout << "Default constructor called\n";
@@ -42,8 +41,6 @@ Fixed::~Fixed()
 	// std::cout << "Destructor called\n";
 }
 
-
-//operators
 Fixed& Fixed::operator = (const Fixed&a)
 {
 	// std::cout << "Copy assignment operator called\n";
@@ -151,30 +148,6 @@ Fixed Fixed::operator -- (void)
 	return(*this);
 }
 
-//member functions
-int	Fixed::getRawBits( void ) const
-{
-	return (this->value);
-}
-
-void Fixed::setRawBits( int const raw )
-{
-	// std::cout << "setRawBits member function called\n";
-	this->value = raw;
-}
-
-float	Fixed::toFloat( void ) const
-{
-	return ((float)this->value / (float)(1 << this->bits));
-}
-
-int	Fixed::toInt( void ) const
-{
-	return (this->value / (1 << this->bits));
-}
-
-
-//static methods
 Fixed&   Fixed::min(Fixed& a, Fixed& b)
 {
 	if (a.getRawBits() < b.getRawBits())
@@ -203,8 +176,27 @@ const Fixed&   Fixed::max(const Fixed& a, const Fixed& b)
 	return (b);
 }
 
+int	Fixed::getRawBits( void ) const
+{
+	return (this->value);
+}
 
-//outside the class
+void Fixed::setRawBits( int const raw )
+{
+	// std::cout << "setRawBits member function called\n";
+	this->value = raw;
+}
+
+float	Fixed::toFloat( void ) const
+{
+	return ((float)this->value / (float)(1 << this->bits));
+}
+
+int	Fixed::toInt( void ) const
+{
+	return (this->value / (1 << this->bits));
+}
+
 std::ostream& operator <<(std::ostream &out, const Fixed& fixed)
 {
 	std::cout << fixed.toFloat();

@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:09:24 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/09 12:24:13 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:59:50 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	main(void)
 // 	//test arithmetic operators
 // 	std::cout << "a + b = " << YELLOW << a + b << RESET_COLOR << std::endl;
 // 	std::cout << "a - b = " << YELLOW << a - b << RESET_COLOR << std::endl;
+// 	std::cout << "b - a = " << YELLOW << b - a << RESET_COLOR << std::endl;
 // 	std::cout << "a * b = " << YELLOW << a * b << RESET_COLOR << std::endl;
 // 	std::cout << "a / b = " << YELLOW << a / b << RESET_COLOR << std::endl;
 	
@@ -64,11 +65,16 @@ int	main(void)
 // 	//test decrement
 // 	std::cout << "\nValue of a after pre-decrement: " << YELLOW << --a << RESET_COLOR << std::endl;
 // 	std::cout << "Value of a after pos-decrement: " << YELLOW << a-- << RESET_COLOR << std::endl;
+
+// 	//test increment
+// 	std::cout << "\nValue of a : " << a << std::endl;
+// 	std::cout << "\nValue of a after pre-increment: " << YELLOW << ++a << RESET_COLOR << std::endl;
+// 	std::cout << "Value of a after pos-increment: " << YELLOW << a++ << RESET_COLOR << std::endl;
 	
 // 	//test max and min functions
 // 	std::cout << "\nValue of a : " << a << std::endl;
 // 	std::cout << "Value of const b: " << b << std::endl;
-// 	std::cout << "max value: " << YELLOW << Fixed::max( a, b ) << RESET_COLOR << std::endl;
+// 	std::cout << "\nmax value: " << YELLOW << Fixed::max( a, b ) << RESET_COLOR << std::endl;
 // 	std::cout << "min value: " << YELLOW << Fixed::min( a, b ) << RESET_COLOR << std::endl;
 
 // 	return (0);

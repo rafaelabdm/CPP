@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:09:55 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/09 12:22:08 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:52:05 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,38 +34,41 @@ class Fixed
    Fixed(const Fixed&a);
    ~Fixed();
    
+   // copy assingment operator
    Fixed& operator = (const Fixed&a);
+   
+   // comparison operators
    bool operator == (const Fixed&a) const;
    bool operator != (const Fixed&a) const;
    bool operator > (const Fixed&a) const;
    bool operator < (const Fixed&a) const;
    bool operator >= (const Fixed&a) const;
    bool operator <= (const Fixed&a) const;
+
+   // arithmetic
    Fixed operator + (const Fixed&a) const;
    Fixed operator - (const Fixed&a) const;
    Fixed operator * (const Fixed&a) const;
    Fixed operator / (const Fixed&a) const;
+
+   // increment/decrement operators
    Fixed operator ++ (int);
    Fixed operator -- (int);
    Fixed operator ++ (void);
    Fixed operator -- (void);
 
-
-
-   int      getRawBits( void ) const;
-   void     setRawBits( int const raw );
-   float    toFloat( void ) const;
-   int      toInt( void ) const;
-   
-
+   // static member functions
    static Fixed&   min(Fixed& a, Fixed& b);
    static const Fixed&   min(const Fixed& a, const Fixed& b);
    static Fixed&   max(Fixed& a, Fixed& b);
    static const Fixed&   max(const Fixed& a, const Fixed& b);
-};
 
-//An overload of the insertion («) operator that inserts a floating-point representation
-// of the fixed-point number into the output stream object passed as parameter.
+   // member functions
+   int      getRawBits( void ) const;
+   void     setRawBits( int const raw );
+   float    toFloat( void ) const;
+   int      toInt( void ) const;
+};
 
 std::ostream& operator <<(std::ostream &out, const Fixed& fixed);
 
