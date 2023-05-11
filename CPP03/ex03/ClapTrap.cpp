@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:31:23 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/09 11:55:21 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/11 15:04:01 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,19 @@ void ClapTrap::beRepaired(unsigned int amount)
 		return ;
 	}
 	std::cout << MAGENTA << "ClapTrap " << this->name << " don't have any energy/hit points left to be repaired.\n" << RESET_COLOR;
+}
+
+int	ClapTrap::getHitPoints(void)
+{
+	return (this->hitPoints);
+}
+
+int	ClapTrap::getEnergyPoints(void)
+{
+	return (this->energyPoints);
+}
+	
+int	ClapTrap::getAttackDamage(void)
+{
+	return (this->attackDamage);
 }
