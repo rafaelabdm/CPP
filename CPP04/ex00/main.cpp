@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:27 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/12 11:22:56 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:05:06 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,18 @@ int main()
 	delete wAnimal;
 	delete wCat;
 	
+	std::cout << "\n" << GREEN << "----------More Tests----------\n" << RESET_COLOR;
+	
+	Cat c;
+	Dog d;
+
+	std::cout << "cat.Animal::getType() == " << c.Animal::getType() << "\n";
+	std::cout << "cat.getType() == " << c.getType() << "\n";
+	std::cout << "dog.getType() == " << d.getType() << "\n\n";
+
+	c.Animal::makeSound();
+	c.makeSound();
+	d.makeSound();
+	std::cout << "\n";
 	return 0;
 }
