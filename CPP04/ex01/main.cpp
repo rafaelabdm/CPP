@@ -1,0 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 09:21:27 by rabustam          #+#    #+#             */
+/*   Updated: 2023/05/12 18:59:08 by rabustam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "Brain.hpp"
+
+int main()
+{
+	int		size = 4;
+	Animal*	array[size];
+
+	std::cout << "---------- Constructors ----------\n";
+	for (int i = 0; i < size; i++)
+	{
+		if (i < (size / 2))
+			array[i] = new Dog();
+		else
+			array[i] = new Cat();
+	}
+
+	std::cout << "\n---------- Destructors ----------\n";
+	for (int i = 0; i < size; i++)
+		delete array[i];
+}
