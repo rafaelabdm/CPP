@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:31:23 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/11 15:04:01 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/17 12:11:30 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	if (this->energyPoints && this->hitPoints)
 	{
 		std::cout << GREEN << "ClapTrap " << this->name << " gets " << amount << " of it's hit points back!\n" << RESET_COLOR;
+		this->energyPoints--;
 		this->hitPoints += amount;
 		std::cout << GREEN << "Hit Points left: " << this->hitPoints << "\n" << RESET_COLOR;
 		return ;
