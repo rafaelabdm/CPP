@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:39:39 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/27 14:19:21 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/17 12:13:56 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,5 @@ void ScavTrap::attack(const std::string& target)
 }
 void	ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << this->name <<  " is now in Gatekeeper mode\n";
+	std::cout << GREEN << "ScavTrap " << this->name <<  " is now in Gatekeeper mode\n" << RESET_COLOR;;
 }

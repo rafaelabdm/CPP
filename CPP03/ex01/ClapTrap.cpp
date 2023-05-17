@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:31:23 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/27 14:18:46 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/17 12:19:44 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,22 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << RED << "ClapTrap " << this->name << " took " << amount << " of damage.\n" << RESET_COLOR;
+	std::cout << RED << "ClapTrap " << this->name << " took " << amount << " of damage." << RESET_COLOR;
 	this->hitPoints -= amount;
 	if (this->hitPoints < 0)
 		this->hitPoints = 0;
-	std::cout << RED << "Hit Points left: " << this->hitPoints << "\n" << RESET_COLOR;
+	std::cout << RED << " (Hit Points left: " << this->hitPoints << ")\n" << RESET_COLOR;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->energyPoints && this->hitPoints)
 	{
-		std::cout << GREEN << "ClapTrap " << this->name << " gets " << amount << " of it's hit points back!\n" << RESET_COLOR;
+		std::cout << GREEN << "ClapTrap " << this->name << " gets " << amount << " of it's hit points back!" << RESET_COLOR;
+		this->energyPoints--;
 		this->hitPoints += amount;
-		std::cout << GREEN << "Hit Points left: " << this->hitPoints << "\n" << RESET_COLOR;
+		std::cout << GREEN << " (Hit Points left: " << this->hitPoints << RESET_COLOR;
+		std::cout << GREEN << " / Energy Points left: " << this->energyPoints << ")\n" << RESET_COLOR;
 		return ;
 	}
 	std::cout << MAGENTA << "ClapTrap " << this->name << " don't have any energy/hit points left to be repaired.\n" << RESET_COLOR;

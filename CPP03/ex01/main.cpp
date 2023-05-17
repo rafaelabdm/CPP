@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:09:31 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/27 14:25:34 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/17 12:15:25 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ int	main(void)
 
 	std::cout << "\n---------Denis---------\n";
 	denis.attack("enemy");
+	denis.takeDamage(10);
+	denis.beRepaired(5);
+	denis.guardGate();
 	
 	std::cout << "\n---------Destructors---------\n";
 
