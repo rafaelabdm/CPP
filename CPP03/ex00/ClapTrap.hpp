@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:31:20 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/26 15:25:37 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/17 11:23:43 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,13 @@ class ClapTrap
 	ClapTrap& operator = (const ClapTrap& a);
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+	void beRepaired(unsigned int amount);	
 
-	
+	// extra functions
+	std::string getName(void);
+	int			getHitPoints(void);
+	int			getEnergyPoints(void);
+	int			getAttackDamage(void);
 };
 
 #endif

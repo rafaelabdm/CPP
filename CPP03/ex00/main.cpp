@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:09:31 by rabustam          #+#    #+#             */
-/*   Updated: 2023/04/26 15:33:13 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/17 12:05:28 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,61 @@
 
 int	main(void)
 {
-	ClapTrap rafa("Rafa");
-	ClapTrap denis(rafa);
-	ClapTrap vic("Vic");
+	std::cout << "\n--------------- Constructors ---------------\n";
+	ClapTrap myPokemon("Pikachu");
+	ClapTrap wildPokemon("Rattata");
 
-	std::cout << "---------Rafa(1)---------\n";
-	rafa.attack("enemy");
-	rafa.takeDamage(8);
-	rafa.beRepaired(1);
-	rafa.takeDamage(4);
-	rafa.beRepaired(10);
-
-	std::cout << "---------Rafa(2)---------\n";
-	denis.attack("enemy");
-	denis.takeDamage(8);
-	denis.beRepaired(1);
-	denis.takeDamage(2);
-	denis.beRepaired(10);
-
-	std::cout << "---------Rafa(3)---------\n";
-	vic = rafa;
-	vic.attack("enemy");
-	vic.takeDamage(8);
-	vic.beRepaired(1);
-	vic.takeDamage(2);
-	vic.beRepaired(10);
+	std::cout << "\n--------------- BATTLE ---------------\n";
+	std::cout << "You've encountered a wild "<< wildPokemon.getName() << "!\n";
+	std::cout << "Go "<< myPokemon.getName() << "!\n";
+	std::cout << "Wild "<< wildPokemon.getName() << " wants to battle!\n";
 	
-	return (0);	
+	std::cout << GREEN << myPokemon.getName() << " use Agility!\n";
+	myPokemon.attack(wildPokemon.getName());
+	std::cout << RESET_COLOR;
+	
+	wildPokemon.takeDamage(0);
+	std::cout << wildPokemon.getName() << " use Defense Curl!\n";
+	wildPokemon.attack(myPokemon.getName());
+	
+	std::cout << RED;
+	myPokemon.takeDamage(0);
+	std::cout << RESET_COLOR;
+
+
+	std::cout << GREEN << "Player used a Potion on " << myPokemon.getName() << "!\n";
+	myPokemon.beRepaired(10);
+	std::cout << RESET_COLOR;
+
+	std::cout << "The wild " << wildPokemon.getName() << " fled!\n";
+	
+	
+	std::cout << "\n--------------- Destructors ---------------\n";
+	return (0);
 }
+
+
+
+// MAIN TO TEST CONSTRUCTORS AND DESTRUCTORS
+
+// int	main(void)
+// {
+// 	std::cout << "\n--------------- Constructors ---------------\n";
+
+// 	ClapTrap clap1("Rafa");
+// 	ClapTrap clap2("Denis");
+
+
+// 	std::cout << "\n--------------- Copy Constructor Test ---------------\n";
+// 	ClapTrap clap3(clap2);
+// 	std::cout << "clap3 name: " << clap3.getName() << "\n";
+	
+	
+// 	std::cout << "\n--------------- Copy Assingment Constructor Test ---------------\n";
+// 	std::cout << "clap1 name: " << clap1.getName() << " - (Before copy assingment)\n";
+// 	clap1 = clap2;
+// 	std::cout << "clap1 name: " << clap1.getName() << " - (After copy assingment)\n";
+	
+// 	std::cout << "\n--------------- Destructors ---------------\n";
+// 	return (0);	
+// }
