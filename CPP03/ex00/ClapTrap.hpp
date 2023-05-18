@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:31:20 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/17 11:23:43 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/18 12:15:17 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ class ClapTrap
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);	
 
-	// extra functions
-	std::string getName(void);
-	int			getHitPoints(void);
-	int			getEnergyPoints(void);
-	int			getAttackDamage(void);
+	// extra functions for ex00
+	std::string getName(void) const;
+	int			getHitPoints(void) const;
+	int			getEnergyPoints(void) const;
+	int			getAttackDamage(void) const;
 };
 
 #endif
