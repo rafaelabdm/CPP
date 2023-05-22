@@ -6,15 +6,24 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 13:53:33 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/11 14:52:01 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:30:45 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap() : ClapTrap()
+{
+	this->name = "Fragy";
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
+	std::cout << YELLOW << "FragTrap (" << this->name <<  ") default constructor called.\n" << RESET_COLOR;
+}
+
 FragTrap::FragTrap (std::string n) : ClapTrap(n)
 {
-	std::cout << YELLOW << "FragTrap (" << this->name <<  ") default constructor called.\n" << RESET_COLOR;
+	std::cout << YELLOW << "FragTrap (" << this->name <<  ") constructor called.\n" << RESET_COLOR;
 	this->hitPoints = 100;
 	this->energyPoints = 100;
 	this->attackDamage = 30;

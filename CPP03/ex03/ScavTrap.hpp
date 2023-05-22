@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:40:01 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/11 14:52:14 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:26:19 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class ScavTrap : virtual public ClapTrap
 {
 	public:
+	ScavTrap();
 	ScavTrap(std::string n);
 	ScavTrap(const ScavTrap& a);
 	ScavTrap& operator = (const ScavTrap& a);

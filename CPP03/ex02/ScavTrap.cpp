@@ -6,13 +6,13 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:39:39 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/22 13:01:19 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:30:47 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	this->name = "Scavy";
 	this->hitPoints = 100;

@@ -6,13 +6,13 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 13:53:33 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/22 13:10:35 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:30:45 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
 	this->name = "Fragy";
 	this->hitPoints = 100;

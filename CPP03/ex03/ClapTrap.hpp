@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:31:20 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/11 15:02:20 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:02:52 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class ClapTrap
 	int			attackDamage;
 	
 	public:
+	ClapTrap();
 	ClapTrap(std::string n);
 	ClapTrap(const ClapTrap& a);
 	~ClapTrap();
@@ -37,9 +38,6 @@ class ClapTrap
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-	int  getHitPoints();
-	int  getEnergyPoints();
-	int  getAttackDamage();
 };
 
 #endif
