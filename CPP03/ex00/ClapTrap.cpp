@@ -6,18 +6,27 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:31:23 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/18 12:15:30 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/22 12:53:53 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+	this->name = "Pokemon";
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
+	std::cout << YELLOW << "Default constructor called.\n" << RESET_COLOR;
+}
+
 ClapTrap::ClapTrap(std::string n): name(n)
 {
-	std::cout << YELLOW << "Default constructor called.\n" << RESET_COLOR;
-	hitPoints = 10;
-	energyPoints = 10;
-	attackDamage = 0;
+	std::cout << YELLOW << "Constructor called.\n" << RESET_COLOR;
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& a)
