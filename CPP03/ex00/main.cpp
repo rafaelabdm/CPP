@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:09:31 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/22 12:36:54 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:53:01 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(void)
 // 	std::cout << "\n--------------- Constructors ---------------\n";
 
 // 	ClapTrap clap1("Rafa");
-// 	ClapTrap clap2("Denis");
+// 	ClapTrap clap2;
 
 
 // 	std::cout << "\n--------------- Copy Constructor Test ---------------\n";
