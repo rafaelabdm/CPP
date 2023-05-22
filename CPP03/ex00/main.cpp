@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:09:31 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/17 12:05:28 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/22 12:36:54 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(void)
 
 
 
-// MAIN TO TEST CONSTRUCTORS AND DESTRUCTORS
+// MORE TESTS
 
 // int	main(void)
 // {
@@ -68,6 +68,25 @@ int	main(void)
 // 	std::cout << "clap1 name: " << clap1.getName() << " - (Before copy assingment)\n";
 // 	clap1 = clap2;
 // 	std::cout << "clap1 name: " << clap1.getName() << " - (After copy assingment)\n";
+	
+
+// 	std::cout << "\n--------------- No Hit Points Left ---------------\n";
+// 	clap1.takeDamage(20);
+// 	clap1.beRepaired(10);
+// 	clap1.attack(clap2.getName());
+	
+// 	std::cout << "\n--------------- No Energy Points Left ---------------\n";
+// 	clap3.beRepaired(10);
+// 	clap3.attack(clap2.getName());
+// 	clap3.attack(clap2.getName());
+// 	clap3.attack(clap2.getName());
+// 	clap3.attack(clap2.getName());
+// 	clap3.attack(clap2.getName());
+// 	clap3.attack(clap2.getName());
+// 	clap3.attack(clap2.getName());
+// 	clap3.attack(clap2.getName());
+// 	clap3.attack(clap2.getName());
+// 	clap3.attack(clap2.getName());
 	
 // 	std::cout << "\n--------------- Destructors ---------------\n";
 // 	return (0);	
