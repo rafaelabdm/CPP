@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:27 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/12 13:05:06 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/23 21:11:38 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+
+/*
+Late binding (Runtime) is done in accordance with the content of the pointer
+(i.e. location pointed to by pointer) and Early binding (Compile-time) is done
+according to the type of pointer.
+*/
 
 int main()
 {
