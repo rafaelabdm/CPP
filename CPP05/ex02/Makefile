@@ -1,10 +1,10 @@
 NAME = forms
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJ = ${SRC:.cpp=.o}
 
-INCLUDE = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp
+INCLUDE = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
 CPP = c++
 

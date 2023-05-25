@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:12:52 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/24 20:19:44 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/25 10:21:17 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "AForm.hpp"
 
 # define GREEN "\033[0;32m"
+# define BLUE_BG "\033[0;44m"
 # define RED "\033[0;31m"
 # define YELLOW "\033[0;33m"
 # define RESET_COLOR "\033[0m"
