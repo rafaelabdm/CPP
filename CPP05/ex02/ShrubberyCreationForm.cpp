@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 19:03:59 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/25 09:31:07 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/31 11:03:34 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Shrubbery Creation Form", 145, 137)
 {
-	this->target = "Home";
+	this->setTarget("Home");
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string t): AForm("Shrubbery Creation Form", 145, 137)
 {
-	this->target = t;
+	this->setTarget(t);
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
@@ -34,11 +34,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& a) :	A
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator= (const ShrubberyCreationForm& a)
 {
-	const_cast<std::string&>(this->name) = a.name;
-	this->is_signed = a.is_signed;
-	const_cast<unsigned int&>(this->required_grade_to_sign) = a.required_grade_to_sign;
-	const_cast<unsigned int&>(this->required_grade_to_execute) = a.required_grade_to_execute;
-	this->target = a.target;
+	setName(a.getName());
+	setIsSigned(a.getIsSigned());
+	setRequiredGradeToSign(a.getRequiredGradeToSign());
+	setRequiredGradeToExecute(a.getRequiredGradeToExecute());
+	setTarget(a.getTarget());
 	return (*this);
 }
 
@@ -49,7 +49,7 @@ void	ShrubberyCreationForm::beExecuted(const Bureaucrat& bureaucrat) const
 	if (this->checkRequirements(bureaucrat) == 2)
 		throw AForm::FormNotSignedException();
 	
-	std::string file_name = target + "_shrubbery";
+	std::string file_name = getTarget() + "_shrubbery";
 	std::fstream file;
 	file.open(file_name.data(), std::ios::in | std::ios::out | std::ios::trunc);
 	if (!file.is_open())

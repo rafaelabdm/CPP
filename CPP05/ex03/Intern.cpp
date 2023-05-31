@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 10:13:20 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/28 11:35:31 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/31 11:18:26 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ Form* Intern::makeForm(std::string form_name, std::string form_target)
 
 	Form* requested_form = (this->*forms[form_name[0] % 4])(form_target);
 	std::cout << "Intern creates " << requested_form->getName() << ".\n";
-	
+		
 	return(requested_form);
 }

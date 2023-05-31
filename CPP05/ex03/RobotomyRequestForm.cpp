@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:35:00 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/28 11:32:30 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/31 11:13:19 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 RobotomyRequestForm::RobotomyRequestForm(): Form("Robotomy Request Form", 72, 45)
 {
-	this->target = "Marvin";
+	this->setTarget("Marvin");
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string t): Form("Robotomy Request Form", 72, 45)
 {
-	this->target = t;
+	this->setTarget(t);
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	// std::cout << YELLOW << this->getName() << " destructor called.\n" << RESET_COLOR;
+
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& a) :	Form(a)
@@ -34,11 +34,11 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& a) :	Form(a)
 
 RobotomyRequestForm& RobotomyRequestForm::operator= (const RobotomyRequestForm& a)
 {
-	const_cast<std::string&>(this->name) = a.name;
-	this->is_signed = a.is_signed;
-	const_cast<unsigned int&>(this->required_grade_to_sign) = a.required_grade_to_sign;
-	const_cast<unsigned int&>(this->required_grade_to_execute) = a.required_grade_to_execute;
-	this->target = a.target;
+	setName(a.getName());
+	setIsSigned(a.getIsSigned());
+	setRequiredGradeToSign(a.getRequiredGradeToSign());
+	setRequiredGradeToExecute(a.getRequiredGradeToExecute());
+	setTarget(a.getTarget());
 	return (*this);
 }
 

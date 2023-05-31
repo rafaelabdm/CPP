@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:07:01 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/28 11:53:13 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/31 11:14:34 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,31 @@ std::string Form::getTarget(void) const
 	return (this->target);
 }
 
+void	Form::setName(std::string newName)
+{
+	const_cast<std::string&>(this->name) = newName;
+}
+
+void	Form::setIsSigned(bool signature)
+{
+	this->is_signed = signature;
+}
+
+void	Form::setRequiredGradeToSign(unsigned int newGradeToSign)
+{
+	const_cast<unsigned int&>(this->required_grade_to_sign) = newGradeToSign;
+}
+
+void	Form::setRequiredGradeToExecute(unsigned int newGradeToExecute)
+{
+	const_cast<unsigned int&>(this->required_grade_to_execute) = newGradeToExecute;
+}
+
+void	Form::setTarget(std::string newTarget)
+{
+	this->target = newTarget;
+}
+
 void	Form::beSigned(const Bureaucrat& bureaucrat)
 {
 	if (bureaucrat.getGrade() <= this->getRequiredGradeToSign())
@@ -83,7 +108,6 @@ void	Form::beSigned(const Bureaucrat& bureaucrat)
 void	Form::beExecuted(const Bureaucrat& bureaucrat) const
 {
 	(void) bureaucrat;
-	std::cout << "This is just an example form. It does nothing :)\n";
 }
 
 int	Form::checkRequirements(const Bureaucrat& bureaucrat) const

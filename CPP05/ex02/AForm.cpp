@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:07:01 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/24 20:06:37 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/31 10:58:14 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,31 @@ unsigned int AForm::getRequiredGradeToExecute(void) const
 std::string AForm::getTarget(void) const
 {
 	return (this->target);
+}
+
+void	AForm::setName(std::string newName)
+{
+	const_cast<std::string&>(this->name) = newName;
+}
+
+void	AForm::setIsSigned(bool signature)
+{
+	this->is_signed = signature;
+}
+
+void	AForm::setRequiredGradeToSign(unsigned int newGradeToSign)
+{
+	const_cast<unsigned int&>(this->required_grade_to_sign) = newGradeToSign;
+}
+
+void	AForm::setRequiredGradeToExecute(unsigned int newGradeToExecute)
+{
+	const_cast<unsigned int&>(this->required_grade_to_execute) = newGradeToExecute;
+}
+
+void	AForm::setTarget(std::string newTarget)
+{
+	this->target = newTarget;
 }
 
 void	AForm::beSigned(const Bureaucrat& bureaucrat)

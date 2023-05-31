@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:47:55 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/24 20:06:50 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/05/31 10:52:55 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Bureaucrat;
 
 class AForm
 {
-	protected:
+	private:
 	const std::string	name;
 	bool				is_signed;
 	const unsigned int	required_grade_to_sign;
@@ -40,6 +40,13 @@ class AForm
 	virtual unsigned int	getRequiredGradeToSign(void) const;
 	virtual unsigned int	getRequiredGradeToExecute(void) const;
 	virtual std::string		getTarget(void) const;
+
+	//setters
+	virtual void	setName(std::string newName);
+	virtual void	setIsSigned(bool signature);
+	virtual void	setRequiredGradeToSign(unsigned int newGradeToSign);
+	virtual void	setRequiredGradeToExecute(unsigned int newGradeToExecute);
+	virtual void	setTarget(std::string newTarget);
 
 	//other member functions
 	virtual void	beSigned(const Bureaucrat& bureaucrat);
