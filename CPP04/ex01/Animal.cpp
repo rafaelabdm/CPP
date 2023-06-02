@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:29:47 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/12 19:08:05 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/02 16:02:03 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,9 @@ void	Animal::makeSound(void) const
 std::string	Animal::getType(void) const
 {
 	return (this->type);
+}
+
+void	Animal::setType(std::string t)
+{
+	this->type = t;
 }

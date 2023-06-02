@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:35:08 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/12 19:00:44 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/02 16:14:46 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ class Brain
 	~Brain();
 	Brain(const Brain& a);
 	Brain& operator= (const Brain& a);
+
+	std::string	getIdea(int i) const;
+	void		setIdea(std::string idea);
 };
 
 #endif

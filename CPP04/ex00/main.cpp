@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:27 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/23 21:11:38 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/02 15:47:24 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main()
 	const Animal* cat = new Cat();
 	std::cout << dog->getType() << " " << std::endl;
 	std::cout << cat->getType() << " " << std::endl;
+	std::cout << animal->getType() << " " << std::endl;
 	dog->makeSound();
 	cat->makeSound();
 	animal->makeSound();
@@ -42,6 +43,7 @@ int main()
 	const WrongAnimal* wAnimal = new WrongAnimal();
 	const WrongAnimal* wCat = new WrongCat();
 	std::cout << wCat->getType() << " " << std::endl;
+	std::cout << wAnimal->getType() << " " << std::endl;
 	wCat->makeSound();
 	wAnimal->makeSound();
 

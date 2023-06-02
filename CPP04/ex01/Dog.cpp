@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:45:01 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/12 19:10:50 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/02 16:14:29 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Dog&	Dog::operator= (const Dog& a)
 {
 	std::cout << GREEN << "[Dog]" << RESET_COLOR << " Copy assingment constructor called\n";
 	this->type = a.type;
+	this->brain = new Brain((const Brain&) a.brain);
 	return (*this);
 }
 
