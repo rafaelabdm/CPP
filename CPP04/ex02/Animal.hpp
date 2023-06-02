@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:28:58 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/17 10:32:23 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/02 16:30:36 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Animal
 	//member functions
 	virtual void	makeSound(void) const = 0;
 	std::string		getType(void) const;
+	void			setType(std::string t);
 };
 
 #endif

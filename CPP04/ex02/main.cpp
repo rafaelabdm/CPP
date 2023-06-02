@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:27 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/17 10:45:27 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/02 16:32:54 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,18 @@
 
 int main()
 {
-	// Animal test;
+	// Animal test; //if tou uncomment this line it should not compile
 	Cat cat;
 	Dog dog;
 
+	std::cout << "Cat sound: ";
 	cat.makeSound();
+	std::cout << "Dog sound: ";
 	dog.makeSound();
 
+	std::cout << "Cat type: " << cat.getType() << "\n";
+	std::cout << "Dog type: " << dog.getType() << "\n";
+
+	
 	return (0);
 }

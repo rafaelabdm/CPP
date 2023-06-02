@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:29:47 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/17 10:32:56 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/02 16:30:21 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,9 @@ Animal&	Animal::operator= (const Animal& a)
 std::string	Animal::getType(void) const
 {
 	return (this->type);
+}
+
+void	Animal::setType(std::string t)
+{
+	this->type = t;
 }
