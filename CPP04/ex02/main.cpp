@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:27 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/02 16:32:54 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:13:31 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int main()
 {
-	// Animal test; //if tou uncomment this line it should not compile
+	// Animal test; //if you uncomment this line it should not compile
 	Cat cat;
 	Dog dog;
 
