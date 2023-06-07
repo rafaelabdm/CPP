@@ -41,12 +41,12 @@ int	main(int argc, char** argv)
 // 	const char*        char_tests[] = {"c", "#",  "", "-", "+","oi", NULL };
 // 	const char*        int_tests[] = {"2147483648", "-2147483649", "42", "0", "-0", "+10", "127", "899", NULL };
 // 	const char*        float_tests[] = {"-4.2f", "nanf", "-inff", "+inff", "1...0f", NULL };
-// 	const char*        double_tests[] = {"1.1426576", "0.57463824344","4.2", "-4.2", "nan", "-inf", "+inf", "", "1...0f", "oi", NULL };
+// 	const char*        double_tests[] = {"1.1426576", "0.57463824344","4.2", "-4.2", "nan", "-inf", "+inf", "", "1...0f", NULL };
 
 // 	std::cout << INVERT_COLOR <<"----------CHAR TESTS----------" << RESET_COLOR << std::endl;
 // 	for (int i = 0; char_tests[i]; i++)
 // 	{
-// 		std::cout << char_tests[i] << " -> ";
+// 		std::cout << "[" << char_tests[i] << "]";
 // 		try
 // 		{
 // 			ScalarConverter::convert(char_tests[i]);
@@ -61,7 +61,7 @@ int	main(int argc, char** argv)
 // 	std::cout << INVERT_COLOR <<"----------INT TESTS----------" << RESET_COLOR << std::endl;
 // 	for (int i = 0; int_tests[i]; i++)
 // 	{
-// 		std::cout << int_tests[i] << " -> ";
+// 		std::cout << "[" << int_tests[i] << "]";
 // 		try
 // 		{
 // 			ScalarConverter::convert(int_tests[i]);
@@ -76,7 +76,7 @@ int	main(int argc, char** argv)
 // 	std::cout << INVERT_COLOR <<"----------FLOAT TESTS----------" << RESET_COLOR << std::endl;
 // 	for (int i = 0; float_tests[i]; i++)
 // 	{
-// 		std::cout << float_tests[i] << " -> ";
+// 		std::cout << "[" << float_tests[i] << "]";
 // 		try
 // 		{
 // 			ScalarConverter::convert(float_tests[i]);
@@ -91,7 +91,7 @@ int	main(int argc, char** argv)
 // 	std::cout << INVERT_COLOR <<"----------DOUBLE TESTS----------" << RESET_COLOR << std::endl;
 // 	for (int i = 0; double_tests[i]; i++)
 // 	{
-// 		std::cout << double_tests[i] << " -> ";
+// 		std::cout << "[" << double_tests[i] << "]";
 // 		try
 // 		{
 // 			ScalarConverter::convert(double_tests[i]);
