@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:45:50 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/07 11:10:02 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/07 11:55:47 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ ScalarConverter& ScalarConverter::operator= (const ScalarConverter& a)
 	}
 	return (*this);
 }
-
 
 int ScalarConverter::all_digit(std::string& str)
 {
