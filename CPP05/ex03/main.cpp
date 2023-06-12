@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:45:29 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/28 11:59:59 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 17:54:05 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	main(void)
 	Form* shrubberyForm;
 	Form* wrongForm;
 	Intern randomIntern;
+
+	std::cout << GREEN << "\nBureaucrat CEO instanciated to sign the forms: " << RESET_COLOR << ceo << std::endl;
 
 	std::cout << YELLOW << "--------- Presidential Form Test ---------\n\n" << RESET_COLOR;
 	presidentialForm = randomIntern.makeForm("presidential pardon", "Robert");

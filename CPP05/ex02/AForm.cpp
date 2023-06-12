@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:07:01 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/31 10:58:14 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 17:44:19 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,21 @@ int	AForm::checkRequirements(const Bureaucrat& bureaucrat) const
 	return (0);
 }
 
+const char* AForm::GradeTooHighException::what()
+{
+	return "Exception: AForm: Grade is too high!\n";
+}
+
+const char* AForm::GradeTooLowException::what()
+{
+	return "Exception: AForm: Grade is too low!\n";
+}
+
+const char* AForm::FormNotSignedException::what()
+{
+	return "Exception: AForm: Form is not signed!\n";
+}
+		
 std::ostream& operator <<(std::ostream &out, const AForm& form)
 {
 	std::cout << "Form name: " << form.getName() << "\n" \

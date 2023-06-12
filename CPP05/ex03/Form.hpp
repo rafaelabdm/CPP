@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:47:55 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/31 11:13:48 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 17:50:43 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,28 +57,19 @@ class Form
 	class GradeTooHighException : std::exception
 	{
 		public:
-		const char* what()
-		{
-			return "Exception: Form: Grade is too high!\n";
-		}
+		const char* what();
 	};
 
 	class GradeTooLowException : std::exception
 	{
 		public:
-		const char* what()
-		{
-			return "Exception: Form: Grade is too low!\n";
-		}
+		const char* what();
 	};
 
 	class FormNotSignedException : std::exception
 	{
 		public:
-		const char * what()
-		{
-			return "Exception: Form: Form is not signed!\n";
-		}
+		const char * what();
 	};
 };
 

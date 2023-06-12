@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:12:03 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/28 11:11:31 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 17:49:05 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,15 @@ void		Bureaucrat::executeForm(Form const & form) const
 	}
 }
 
+const char* Bureaucrat::GradeTooHighException::what()
+{
+	return "Exception: Bureaucrat's grade is too high!\n";
+}
+
+const char* Bureaucrat::GradeTooLowException::what()
+{
+	return "Exception: Bureaucrat's grade is too low!\n";
+}
 
 std::ostream& operator <<(std::ostream &out, const Bureaucrat& bureaucrat)
 {

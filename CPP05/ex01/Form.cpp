@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:07:01 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/24 14:12:31 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 17:34:38 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,14 @@ std::ostream& operator <<(std::ostream &out, const Form& form)
 			  << "Grade required to sign: " << form.getRequiredGradeToSign() << "\n" \
 			  << "Grade required to execute: " << form.getRequiredGradeToExecute() << "\n";
 	return (out);
+}
+
+const char* Form::GradeTooHighException::what()
+{
+	return "Exception: Form: Grade is too high!\n";
+}
+
+const char* Form::GradeTooLowException::what()
+{
+	return "Exception: Form: Grade is too low!\n";
 }

@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:47:55 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/31 10:52:55 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 17:57:32 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AForm
 	const unsigned int	required_grade_to_sign;
 	const unsigned int	required_grade_to_execute;
 	std::string			target;
-	
+
 	public:
 	AForm();
 	AForm(std::string n, int rgs, int rge);
@@ -57,28 +57,19 @@ class AForm
 	class GradeTooHighException : std::exception
 	{
 		public:
-		const char* what()
-		{
-			return "Exception: AForm: Grade is too high!\n";
-		}
+		const char* what();
 	};
 
 	class GradeTooLowException : std::exception
 	{
 		public:
-		const char* what()
-		{
-			return "Exception: AForm: Grade is too low!\n";
-		}
+		const char* what();
 	};
 
 	class FormNotSignedException : std::exception
 	{
 		public:
-		const char * what()
-		{
-			return "Exception: AForm: Form is not signed!\n";
-		}
+		const char* what();
 	};
 };
 
