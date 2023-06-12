@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:40:03 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/06 19:57:41 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/09 18:30:54 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ class ScalarConverter
 	static void double_convertion(std::string& str);
 	static void	convert(std::string str_to_convert);
 
-	class UnknownTypeException : std::exception
+	class UnknownTypeException : public std::exception
 	{
 		public:
 		const char * what()

@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:27 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/02 16:19:58 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/09 19:42:29 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
 		delete array[i];	
 
 
-	std::cout << "\n---------- More Tests ----------\n";
+	std::cout << "\n---------- Deep Copy Tests ----------\n";
 	Animal* dog = new Dog();
 	Animal* cat = new Cat();
 	Animal*	cat2 = cat;
