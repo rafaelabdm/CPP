@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:35:00 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/31 11:02:46 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:23:30 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ RobotomyRequestForm& RobotomyRequestForm::operator= (const RobotomyRequestForm& 
 	return (*this);
 }
 
-void	RobotomyRequestForm::beExecuted(const Bureaucrat& bureaucrat) const
+void	RobotomyRequestForm::execute(const Bureaucrat& executer) const
 {
-	if (this->checkRequirements(bureaucrat) == 1)
+	if (this->checkRequirements(executer) == 1)
 		throw AForm::GradeTooLowException();
-	if (this->checkRequirements(bureaucrat) == 2)
+	if (this->checkRequirements(executer) == 2)
 		throw AForm::FormNotSignedException();
 	
 	srand((unsigned) time(NULL)); //change number every execution

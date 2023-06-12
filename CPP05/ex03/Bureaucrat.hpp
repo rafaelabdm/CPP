@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:12:52 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/12 17:49:20 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 17:44:46 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
-# include "Form.hpp"
+# include "AForm.hpp"
 
 # define GREEN "\033[0;32m"
 # define BLUE_BG "\033[0;44m"
@@ -22,7 +22,7 @@
 # define YELLOW "\033[0;33m"
 # define RESET_COLOR "\033[0m"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -40,8 +40,8 @@ class Bureaucrat
 	unsigned int	getGrade(void) const;
 	void			incrementGrade(void);
 	void			decrementGrade(void);
-	void			signForm(Form& form_to_sign) const;
-	void			executeForm(Form const & form) const;
+	void			signForm(AForm& form_to_sign) const;
+	void			executeForm(AForm const & form) const;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -56,6 +56,7 @@ class Bureaucrat
 	};
 };
 
+// (<<) overload 
 std::ostream& operator <<(std::ostream &out, const Bureaucrat& bureaucrat);
 
 #endif

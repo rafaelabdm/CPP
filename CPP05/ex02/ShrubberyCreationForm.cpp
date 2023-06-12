@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 19:03:59 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/31 11:03:34 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:23:56 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator= (const ShrubberyCreation
 	return (*this);
 }
 
-void	ShrubberyCreationForm::beExecuted(const Bureaucrat& bureaucrat) const
+void	ShrubberyCreationForm::execute(const Bureaucrat& executer) const
 {
-	if (this->checkRequirements(bureaucrat) == 1)
+	if (this->checkRequirements(executer) == 1)
 		throw AForm::GradeTooLowException();
-	if (this->checkRequirements(bureaucrat) == 2)
+	if (this->checkRequirements(executer) == 2)
 		throw AForm::FormNotSignedException();
 	
 	std::string file_name = getTarget() + "_shrubbery";

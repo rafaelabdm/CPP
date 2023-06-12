@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:53:43 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/31 11:12:42 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:23:41 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include <fstream>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class ShrubberyCreationForm : public Form
+class ShrubberyCreationForm : public AForm
 {
 	public:
 	ShrubberyCreationForm();
@@ -25,7 +25,7 @@ class ShrubberyCreationForm : public Form
 	ShrubberyCreationForm(const ShrubberyCreationForm& a);
 	ShrubberyCreationForm& operator= (const ShrubberyCreationForm& a);
 
-	void	beExecuted(const Bureaucrat& bureaucrat) const;
+	void	execute(const Bureaucrat& executer) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:47:55 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/12 17:57:32 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:22:10 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ class AForm
 
 	//other member functions
 	virtual void	beSigned(const Bureaucrat& bureaucrat);
-	virtual void	beExecuted(const Bureaucrat& bureaucrat) const = 0; //pure virtual function
+	virtual void	execute(Bureaucrat const & executor) const = 0; //pure virtual function
 	virtual int		checkRequirements(const Bureaucrat& bureaucrat) const;
 	
 	//exceptions

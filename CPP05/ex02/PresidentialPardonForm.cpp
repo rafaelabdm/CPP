@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 10:09:24 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/31 11:01:52 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:23:00 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ PresidentialPardonForm& PresidentialPardonForm::operator= (const PresidentialPar
 	return (*this);
 }
 
-void	PresidentialPardonForm::beExecuted(const Bureaucrat& bureaucrat) const
+void	PresidentialPardonForm::execute(const Bureaucrat& executor) const
 {
-	if (this->checkRequirements(bureaucrat) == 1)
+	if (this->checkRequirements(executor) == 1)
 		throw AForm::GradeTooLowException();
-	if (this->checkRequirements(bureaucrat) == 2)
+	if (this->checkRequirements(executor) == 2)
 		throw AForm::FormNotSignedException();
 	std::cout << this->getTarget() <<" has been pardoned by Zaphod Beeblebrox.\n";
 }

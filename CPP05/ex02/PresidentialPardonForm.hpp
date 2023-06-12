@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 10:08:13 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/25 10:09:05 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:22:42 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class PresidentialPardonForm : public AForm
 	PresidentialPardonForm(const PresidentialPardonForm& a);
 	PresidentialPardonForm& operator= (const PresidentialPardonForm& a);
 
-	void	beExecuted(const Bureaucrat& bureaucrat) const;
+	void	execute(const Bureaucrat& executor) const;
 };
 
 #endif

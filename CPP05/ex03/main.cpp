@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:45:29 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/12 17:54:05 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:33:16 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	main(void)
 {
 	Bureaucrat	ceo("CEO", 1);
 
-	Form* presidentialForm;
-	Form* robotomyForm;
-	Form* shrubberyForm;
-	Form* wrongForm;
+	AForm* presidentialForm;
+	AForm* robotomyForm;
+	AForm* shrubberyForm;
+	AForm* wrongForm;
 	Intern randomIntern;
 
 	std::cout << GREEN << "\nBureaucrat CEO instanciated to sign the forms: " << RESET_COLOR << ceo << std::endl;

@@ -6,16 +6,16 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 10:08:13 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/31 11:12:28 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:22:42 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class PresidentialPardonForm : public Form
+class PresidentialPardonForm : public AForm
 {
 	public:
 	PresidentialPardonForm();
@@ -24,7 +24,7 @@ class PresidentialPardonForm : public Form
 	PresidentialPardonForm(const PresidentialPardonForm& a);
 	PresidentialPardonForm& operator= (const PresidentialPardonForm& a);
 
-	void	beExecuted(const Bureaucrat& bureaucrat) const;
+	void	execute(const Bureaucrat& executor) const;
 };
 
 #endif

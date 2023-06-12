@@ -6,18 +6,18 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 19:03:59 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/31 11:13:30 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:23:56 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(): Form("Shrubbery Creation Form", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Shrubbery Creation Form", 145, 137)
 {
 	this->setTarget("Home");
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string t): Form("Shrubbery Creation Form", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string t): AForm("Shrubbery Creation Form", 145, 137)
 {
 	this->setTarget(t);
 }
@@ -27,7 +27,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& a) :	Form(a)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& a) :	AForm(a)
 {
 	
 }
@@ -42,12 +42,12 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator= (const ShrubberyCreation
 	return (*this);
 }
 
-void	ShrubberyCreationForm::beExecuted(const Bureaucrat& bureaucrat) const
+void	ShrubberyCreationForm::execute(const Bureaucrat& executer) const
 {
-	if (this->checkRequirements(bureaucrat) == 1)
-		throw Form::GradeTooLowException();
-	if (this->checkRequirements(bureaucrat) == 2)
-		throw Form::FormNotSignedException();
+	if (this->checkRequirements(executer) == 1)
+		throw AForm::GradeTooLowException();
+	if (this->checkRequirements(executer) == 2)
+		throw AForm::FormNotSignedException();
 	
 	std::string file_name = getTarget() + "_shrubbery";
 	std::fstream file;

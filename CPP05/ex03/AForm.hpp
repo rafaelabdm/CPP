@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:47:55 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/12 17:50:43 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:22:10 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include <iostream>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
 	const std::string	name;
@@ -26,13 +26,13 @@ class Form
 	const unsigned int	required_grade_to_sign;
 	const unsigned int	required_grade_to_execute;
 	std::string			target;
-	
+
 	public:
-	Form();
-	Form(std::string n, int rgs, int rge);
-	virtual ~Form();
-	Form(const Form& a);
-	Form& operator= (const Form& a);
+	AForm();
+	AForm(std::string n, int rgs, int rge);
+	virtual ~AForm();
+	AForm(const AForm& a);
+	AForm& operator= (const AForm& a);
 	
 	//getters
 	virtual std::string		getName(void) const;
@@ -50,7 +50,7 @@ class Form
 
 	//other member functions
 	virtual void	beSigned(const Bureaucrat& bureaucrat);
-	virtual void	beExecuted(const Bureaucrat& bureaucrat) const;
+	virtual void	execute(Bureaucrat const & executor) const = 0; //pure virtual function
 	virtual int		checkRequirements(const Bureaucrat& bureaucrat) const;
 	
 	//exceptions
@@ -69,10 +69,10 @@ class Form
 	class FormNotSignedException : std::exception
 	{
 		public:
-		const char * what();
+		const char* what();
 	};
 };
 
-std::ostream& operator <<(std::ostream &out, const Form& form);
+std::ostream& operator <<(std::ostream &out, const AForm& Aform);
 
 #endif

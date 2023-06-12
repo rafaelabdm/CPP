@@ -6,18 +6,18 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:35:00 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/31 11:13:19 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:23:30 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(): Form("Robotomy Request Form", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(): AForm("Robotomy Request Form", 72, 45)
 {
 	this->setTarget("Marvin");
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string t): Form("Robotomy Request Form", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(std::string t): AForm("Robotomy Request Form", 72, 45)
 {
 	this->setTarget(t);
 }
@@ -27,7 +27,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& a) :	Form(a)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& a) :	AForm(a)
 {
 	
 }
@@ -42,12 +42,12 @@ RobotomyRequestForm& RobotomyRequestForm::operator= (const RobotomyRequestForm& 
 	return (*this);
 }
 
-void	RobotomyRequestForm::beExecuted(const Bureaucrat& bureaucrat) const
+void	RobotomyRequestForm::execute(const Bureaucrat& executer) const
 {
-	if (this->checkRequirements(bureaucrat) == 1)
-		throw Form::GradeTooLowException();
-	if (this->checkRequirements(bureaucrat) == 2)
-		throw Form::FormNotSignedException();
+	if (this->checkRequirements(executer) == 1)
+		throw AForm::GradeTooLowException();
+	if (this->checkRequirements(executer) == 2)
+		throw AForm::FormNotSignedException();
 	
 	srand((unsigned) time(NULL)); //change number every execution
 	int robotomy = rand() % 2;

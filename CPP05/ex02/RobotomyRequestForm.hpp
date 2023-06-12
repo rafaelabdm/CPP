@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:32:37 by rabustam          #+#    #+#             */
-/*   Updated: 2023/05/25 09:56:02 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:23:18 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class RobotomyRequestForm : public AForm
 	RobotomyRequestForm(const RobotomyRequestForm& a);
 	RobotomyRequestForm& operator= (const RobotomyRequestForm& a);
 
-	void	beExecuted(const Bureaucrat& bureaucrat) const;
+	void	execute(const Bureaucrat& executer) const;
 };
 
 #endif

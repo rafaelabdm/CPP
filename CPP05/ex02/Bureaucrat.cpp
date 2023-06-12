@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:12:03 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/12 17:45:02 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:24:12 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void		Bureaucrat::executeForm(AForm const & form) const
 {
 	try
 	{
-		form.beExecuted(*this);
+		form.execute(*this);
 		std::cout << "Bureaucrat " << this->name << " executed the " << form.getName() << ".\n";
 	}
 	catch (AForm::GradeTooLowException& e)
