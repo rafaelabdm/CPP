@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 09:51:29 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/07 10:50:45 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/15 10:50:03 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void identify(Base& p)
 		A& cast = dynamic_cast<A&>(p);
 		std::cout << "Class Reference of Type A\n";
 		(void) cast;
+		return ;
 	}
 	catch (std::exception& e) {}
 	
@@ -58,6 +59,7 @@ void identify(Base& p)
 		B& cast = dynamic_cast<B&>(p);
 		std::cout << "Class Reference of Type B\n";
 		(void) cast;
+		return ;
 	}
 	catch (std::exception& e) {}
 
@@ -66,11 +68,10 @@ void identify(Base& p)
 		C& cast = dynamic_cast<C&>(p);
 		std::cout << "Class Reference of Type C\n";
 		(void) cast;
+		return ;
 	}
 	catch (std::exception& e) 
 	{
 		std::cout << "I don't have a clue of what type is this pointer you passed me...\n";
 	}
-
-	
 }

@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 10:15:53 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/07 10:52:13 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/15 10:48:47 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int	main(void)
 {
-	std::cout << INVERT_COLOR << "----------TEST_01----------" << RESET_COLOR << std::endl;
+	std::cout << INVERT_COLOR << "TEST 01: Passing a random class (A, B or C)" << RESET_COLOR << std::endl;
 	Base * test_01 = generate();
 	std::cout << "Identify by pointer: ";
 	identify(test_01);
@@ -27,7 +27,7 @@ int	main(void)
 	std::cout << "\n";
 	delete test_01;
 
-	std::cout << INVERT_COLOR << "----------TEST_02----------" << RESET_COLOR << std::endl;
+	std::cout << INVERT_COLOR << "TEST 02: Error handling (passing the Base class)" << RESET_COLOR << std::endl;
 	Base test_02;
 	std::cout << "Identify by pointer: ";
 	identify(&test_02);
