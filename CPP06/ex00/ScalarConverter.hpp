@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:40:03 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/16 13:23:33 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/16 13:28:55 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,10 @@ class ScalarConverter
 	
 	//conversion helpers
 	static void	int_to_char(int value);
-	static void	int_to_float(int value);
-	static void	int_to_double(int value);
 	static void	float_to_char(float value);
 	static void	float_to_int(float value);
-	static void	float_to_double(float value);
 	static void	double_to_char(double value);
 	static void	double_to_int(double value);
-	static void	double_to_float(double value);
 	
 	//convertion functions
 	static void	char_conversion(const std::string input);
