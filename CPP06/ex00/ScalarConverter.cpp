@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:45:50 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/07 11:55:47 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/16 13:27:12 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,121 +31,231 @@ ScalarConverter::ScalarConverter(const ScalarConverter& a)
 ScalarConverter& ScalarConverter::operator= (const ScalarConverter& a)
 {
 	std::cout << YELLOW << "Assingment Constructor Called!\n" << RESET_COLOR;
-	if (this != &a)
-	{
-		//don't have attributes to copy;
-	}
+	(void) a;
 	return (*this);
 }
 
-int ScalarConverter::all_digit(std::string& str)
+const char * ScalarConverter::UnknownTypeException::what() const throw()
 {
-	long unsigned int i = 0;
+	return "\033[0;31mUnknownTypeException: Type not supported!\n\033[0m";
+}
 
-	if (str[0] == '+' || str[0] == '-')
+//helper functions
+bool ScalarConverter::is_all_digit(const std::string& input)
+{
+	unsigned int i = 0;
+
+	if (input[0] == '+' || input[0] == '-')
 		i++;
-	if (!str[i])
-		return (0);
-	while (i < str.length())
+	while (i < input.length())
 	{
-		if (!isdigit(str[i]))
-			return (0);
+		if (!isdigit(input[i]))
+			return (false);
 		i++;
 	}
-	return (1);
+	return (true);
 }
 
-int ScalarConverter::check_special(std::string& str)
+bool ScalarConverter::is_all_digit_float(const std::string& input)
 {
-	if (!str.compare("nanf") || !str.compare("-inff") || !str.compare("+inff"))
-		return (1);
-	if (!str.compare("nan") || !str.compare("-inf") || !str.compare("+inf"))
-		return (2);
-	return (0);
+	unsigned int i = 0;
+
+	if (input[0] == '+' || input[0] == '-')
+		i++;
+	while (i < input.length())
+	{
+		if (!isdigit(input[i]) && input[i] != '.' && input[i] != 'f')
+			return (false);
+		i++;
+	}
+	return (true);
 }
 
-int ScalarConverter::check_int_overflow(std::string& str)
+int ScalarConverter::is_special_case(const std::string& input)
 {
-	long int check = std::strtol(str.c_str(), NULL, 10);
-	if (check <= INT_MAX && check >= INT_MIN)
-		return (0);
-	return (1);
-}
-
-int ScalarConverter::check_input(std::string& str)
-{
-	if (str.empty())
-		return (0);
-	
-	int special = check_special(str);
-	if (special)
-		return (special);
-	
-	if (str.find(".") != std::string::npos && str.find("f") != std::string::npos)
+	if (!input.compare("-inff") || !input.compare("+inff") || !input.compare("nanf"))
 		return (FLOAT);
-	if (str.find(".") != std::string::npos)
+	if (!input.compare("-inf") || !input.compare("+inf") || !input.compare("nan"))
 		return (DOUBLE);
-	if(all_digit(str))
-	{
-		if (check_int_overflow(str))
-			return (DOUBLE);
-		return(INT);
-	}
-	if(str.length() == 1 && std::isprint(str[0]))
-		return(CHAR);
-
-	return (0);
+	return (ERROR);
 }
 
-void ScalarConverter::char_convertion(std::string& str)
+
+//get type functions
+bool ScalarConverter::is_char(const std::string& input)
 {
-	char c_value = str[0];
-	std::cout << YELLOW << "\nResult of convertion:" << RESET_COLOR << "\n";
-	std::cout << "char: " << c_value << std::endl;
-	toInt<char>(c_value);
-	toFloat<char>(c_value);
-	toDouble<char>(c_value);
+	if (input.length() == 1 && std::isprint(input[0]) && !std::isdigit(input[0]))
+		return (true);
+	return (false);
 }
 
-void ScalarConverter::int_convertion(std::string& str)
+bool ScalarConverter::is_int(const std::string& input)
 {
-	int i_value = std::atoi(str.c_str());
-	std::cout << YELLOW << "\nResult of convertion:" << RESET_COLOR << "\n";
-	toChar<int>(i_value);
-	std::cout << "int: " << i_value << std::endl;
-	toFloat<int>(i_value);
-	toDouble<int>(i_value);
+	if (is_all_digit(input) && input.length() < 16)
+		return (true);
+	return (false);
 }
 
-void ScalarConverter::float_convertion(std::string& str)
+bool ScalarConverter::is_float(const std::string& input)
 {
-	float f_value = strtof(str.c_str(), NULL);
-	std::cout << YELLOW << "\nResult of convertion:" << RESET_COLOR << "\n";
-	toChar<float>(f_value);
-	toInt<float>(f_value);
-	std::cout << std::fixed << "float: " << f_value << "f\n";
-	std::cout << std::fixed << "double: " << static_cast<double>(f_value) << std::endl;
+	if (input.find('f') == std::string::npos)
+		return (false);
+	if (is_special_case(input) == FLOAT)
+		return (true);
+	return (is_all_digit_float(input) && input.find('.') <= 16);
 }
 
-void ScalarConverter::double_convertion(std::string& str)
+bool ScalarConverter::is_double(const std::string& input)
 {
-	double d_value = std::strtod(str.c_str(), NULL);
-	std::cout << YELLOW << "\nResult of convertion:" << RESET_COLOR << "\n";
-	toChar<double>(d_value);
-	toInt<double>(d_value);
-	std::cout << std::fixed << "float: " << static_cast<float>(d_value)<< "f\n";
-	std::cout << std::fixed << "double: " << d_value << std::endl;
+	if (is_special_case(input) == DOUBLE)
+		return (true);
+	return (is_all_digit_float(input) && input.find('.') <= 16);
 }
 
-void	ScalarConverter::convert(std::string str_to_convert)
+int	ScalarConverter::get_input_type(const std::string& input)
 {
-	int type = check_input(str_to_convert);
+	if (input.empty())
+		return (ERROR);
+	if (is_char(input))
+		return (CHAR);
+	if (is_int(input))
+		return (INT);
+	if (is_float(input))
+		return (FLOAT);
+	if (is_double(input))
+		return (DOUBLE);
+	return (ERROR);
+}
+
+
+// check overflow
+bool	check_int_overflow(const std::string& input)
+{
+	long int check = std::atol(input.c_str());
+
+	if (check >= INT_MIN && check <= INT_MAX)
+		return (true);
+	std::cout << "char: impossible\n";
+	std::cout << "int: impossible\n";
+	std::cout << std::fixed << "float: " << static_cast<float>(check) << "f" << std::endl;
+	std::cout << std::fixed << "double: " << static_cast<double>(check) << std::endl;
+	
+	return (false);
+}
+
+//	conversion functions
+
+//		char convertions
+void	ScalarConverter::char_conversion(const std::string input)
+{
+	char value = input[0];
+	
+	std::cout << "char: " << value << std::endl;
+	std::cout << "int: " << static_cast<int>(value) << std::endl;
+	std::cout << std::fixed << "float: " << static_cast<float>(value) << "f" << std::endl;
+	std::cout << std::fixed << "double: " << static_cast<double>(value) << std::endl;
+}
+
+//		int convertions
+void	ScalarConverter::int_to_char(int value)
+{
+	if (value < CHAR_MIN || value > CHAR_MAX)
+		std::cout << "char: impossible\n";
+	else if (std::isprint(value))
+		std::cout << "char: " << static_cast<char>(value) << std::endl;
+	else
+		std::cout << "char: non displayable\n";
+}
+
+void	ScalarConverter::int_conversion(const std::string input)
+{
+	if (!check_int_overflow(input))
+		return ;	
+	int	value = std::atoi(input.c_str());
+
+	int_to_char(value);	
+	std::cout << "int: " << value << std::endl;
+	std::cout << std::fixed << "float: " << static_cast<float>(value) << "f" << std::endl;
+	std::cout << std::fixed << "double: " << static_cast<double>(value) << std::endl;
+}
+
+//		float converetions
+void	ScalarConverter::float_to_char(float value)
+{
+	if (value < CHAR_MIN || value > CHAR_MAX || std::isnan(value) || std::isinf(value))
+		std::cout << "char: impossible\n";
+	else if (std::isprint(value))
+		std::cout << "char: " << static_cast<char>(value) << std::endl;
+	else
+		std::cout << "char: non displayable\n";
+}
+
+void	ScalarConverter::float_to_int(float value)
+{
+	if (value < INT_MIN || value > INT_MAX || std::isnan(value) || std::isinf(value))
+		std::cout << "int: impossible\n";
+	else
+		std::cout << "int: " << static_cast<int>(value) << std::endl;
+}
+
+void	ScalarConverter::float_conversion(const std::string input)
+{
+
+	float	value = std::strtof(input.c_str(), NULL);
+
+	float_to_char(value);
+	float_to_int(value);
+	std::cout << std::fixed << "float: " << value << "f" << std::endl;
+	std::cout << std::fixed << "double: " << static_cast<double>(value) << std::endl;
+}
+
+
+//	double conversion
+void	ScalarConverter::double_to_char(double value)
+{
+	if (value < CHAR_MIN || value > CHAR_MAX || std::isnan(value) || std::isinf(value))
+		std::cout << "char: impossible\n";
+	else if (std::isprint(value))
+		std::cout << "char: " << static_cast<char>(value) << std::endl;
+	else
+		std::cout << "char: non displayable\n";
+}
+
+void	ScalarConverter::double_to_int(double value)
+{
+	if (value < INT_MIN || value > INT_MAX || std::isnan(value) || std::isinf(value))
+		std::cout << "int: impossible\n";
+	else
+		std::cout << "int: " << static_cast<int>(value) << std::endl;
+}
+
+void	ScalarConverter::double_conversion(const std::string& input)
+{
+	double value = std::strtod(input.c_str(), NULL);
+	double_to_char(value);
+	double_to_int(value);
+	std::cout << std::fixed << "float: " << static_cast<float>(value) << "f" << std::endl;
+	std::cout << std::fixed << "double: " << value << std::endl;
+}
+
+void ScalarConverter::impossible(void)
+{
+	std::cout << "char: impossible\n";
+	std::cout << "int: impossible\n";
+	std::cout << "float: impossible\n";
+	std::cout << "double: impossible\n";
+}
+
+void	ScalarConverter::convert(const std::string input)
+{
+	int	type = get_input_type(input);
+	
 	switch (type)
 	{
-		case FLOAT: float_convertion(str_to_convert); break ;
-		case DOUBLE: double_convertion(str_to_convert); break ;
-		case INT: int_convertion(str_to_convert); break ;
-		case CHAR: char_convertion(str_to_convert); break ;
-		default: throw UnknownTypeException();
+		case CHAR: char_conversion(input); break;
+		case INT: int_conversion(input); break;
+		case FLOAT: float_conversion(input); break;
+		case DOUBLE: double_conversion(input); break;
+		default : impossible();
 	}
 }
