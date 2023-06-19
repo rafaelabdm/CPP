@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 13:28:41 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/07 14:46:27 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/19 13:04:29 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ class Array
 		this->_array = new T[a.size()];
 		for (unsigned int i = 0; i < _size; i++)
 		{
-			this->_array[i] = a.getItem(i);
+			this->_array[i] = a[i];
 		}
 	};
 	
@@ -64,9 +64,11 @@ class Array
 		return (*this);
 	};
 	
-	T	operator[](unsigned int index) const
+	T&	operator[](unsigned int index) const
 	{
-		return (getItem(index));
+		if (index >= this->_size)
+			throw OutOfBoundsException();
+		return (this->_array[index]);
 	};
 
 	// Member functions
@@ -75,23 +77,11 @@ class Array
 		return (this->_size);
 	}
 	
-	T				getItem(unsigned int i) const
-	{
-		if (i >= this->_size)
-			throw OutOfBoundsException();
-		return (this->_array[i]);
-	}
-
-	void			setItem(unsigned int i, T item)
-	{
-		this->_array[i] = item;
-	}
-	
 	// Exceptions
 	class OutOfBoundsException : public std::exception
 	{
 		public:
-		const char* what()
+		const char* what() const throw()
 		{
 			return "Exception: The index you tried to access is out of array bounds!\n";
 		}
