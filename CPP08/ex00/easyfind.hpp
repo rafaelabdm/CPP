@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 10:10:31 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/09 18:03:28 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/21 10:51:05 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define EASYFIND_HPP
 
 # include <algorithm>
+
+# define RESET_COLOR	"\033[0m"
+# define INVERT_COLOR	"\033[7m"
+# define YELLOW			"\033[0;33m"
 
 class ValueNotFoundException : std::exception
 {
@@ -32,7 +36,5 @@ typename T::iterator easyfind(T &container, int value)
 		throw ValueNotFoundException();
 	return (it);
 }
-
-
 
 #endif

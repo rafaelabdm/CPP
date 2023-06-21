@@ -6,12 +6,11 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 10:09:54 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/09 18:11:07 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/21 10:52:44 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
-#include "colors.hpp"
 #include <iostream>
 #include <vector>
 #include <list>
