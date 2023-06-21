@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:15:44 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/13 13:55:25 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/21 11:13:04 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	Span::random_number(void)
 	if (seed == 0)
 		time(&seed);
 	srand (seed);
-	n = rand() % 1000;
+	n = rand() % 10000;
 	seed += n;
 	
 	return (n);
