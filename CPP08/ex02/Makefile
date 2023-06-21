@@ -4,7 +4,7 @@ SRC =	main.cpp
 
 OBJ = ${SRC:.cpp=.o}
 
-INCLUDE = MutantStack.hpp colors.hpp
+INCLUDE = MutantStack.hpp
 
 CPP = c++
 

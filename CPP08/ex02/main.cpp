@@ -6,12 +6,11 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 14:03:13 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/14 13:15:10 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/21 11:22:01 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
-#include "colors.hpp"
 
 int main(void)
 {
