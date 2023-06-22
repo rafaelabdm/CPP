@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 14:16:26 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/21 00:00:25 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/22 15:05:33 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class BitcoinExchange
 
 	void		constructMap(void);
 	double		getBottomDate(const std::string& targetDate) const;
+	bool		isDate(std::string date) const;
 	double		getValue(std::string line) const;
 	std::string	getKey(std::string line) const;
 	

@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 22:16:45 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/21 00:01:11 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/22 15:09:21 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,22 @@ double	BitcoinExchange::getBottomDate(const std::string& targetDate) const
 	return it->second;
 }
 
+bool	BitcoinExchange::isDate(std::string date) const
+{
+	if (date.size() != 10)
+		return (false);
+	if (date[5] != '0' && date[5] != '1')
+		return (false);
+	if (date[8] > '3' || date[8] < '0')
+		return (false);
+	for (size_t i = 0; i < date.size(); i++)
+	{
+		if (!std::isdigit(date[i]) && date[i] != '-')
+			return (false);
+	}
+	return (true);
+}
+
 std::string	BitcoinExchange::getKey(std::string line) const
 {
 	size_t		sep;
@@ -72,7 +88,9 @@ std::string	BitcoinExchange::getKey(std::string line) const
 	if (sep == std::string::npos)
 		throw BadInputException();
 	key = line.substr(0, sep);
-	return (key);
+	if (isDate(key))
+		return (key);
+	throw BadInputException();
 }
 
 double	BitcoinExchange::getValue(std::string line) const
@@ -98,6 +116,7 @@ void	BitcoinExchange::searchDates(std::string file_name) const
 	file.open(file_name.data(), std::ifstream::in);
 	if(file.is_open())
 	{
+		getline(file, line);
 		while(getline(file, line))
 		{
 			try
