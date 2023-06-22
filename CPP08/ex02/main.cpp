@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 14:03:13 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/21 11:22:01 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/22 14:43:07 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int main(void)
 	
 	std::cout <<"Top of my stack: " << mstack.top() << std::endl;
 	std::cout << "Size of mystack: " << mstack.size() << std::endl;
+	
+	std::cout << std::boolalpha << "is empty? " << mstack.empty() << std::endl;
 	
 	std::cout << GREEN << "\nmstack.pop();\n\n" << RESET_COLOR;
 	mstack.pop();
