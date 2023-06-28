@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 17:49:43 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/20 23:49:05 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/28 18:49:58 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 {
 	if (argc != 2)
 	{
-		std::cout << "Error: could not open file." << std::endl;
+		std::cout << "Usage: ./btc <file_to_avaluate>" << std::endl;
 		return (1);
 	}
 

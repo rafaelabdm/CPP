@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 14:16:26 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/22 15:05:33 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/28 18:47:18 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ class BitcoinExchange
 		public:
 		const char* what() const throw();
 	};
-
 
 	class	BadInputException : public std::exception
 	{
