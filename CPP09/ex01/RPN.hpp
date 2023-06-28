@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 09:25:22 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/22 14:22:09 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/28 19:00:55 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define YELLOW			"\033[0;33m"
 # define RED			"\033[0;31m"
 # define GREEN			"\033[0;32m"
+# define BLUE			"\033[0;34m"
 
 class RPN
 {

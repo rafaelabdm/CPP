@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 09:27:04 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/22 13:54:01 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/28 19:09:20 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,9 @@ void	RPN::doTheMath(void)
 		_stack.pop();
 		count++;
 	}
-	std::cout << "result: " << result << std::endl;
+	if (n1 != -1)
+		throw BadInputException();
+	std::cout << result << std::endl;
 }
 
 const char* RPN::BadInputException::what() const throw()
