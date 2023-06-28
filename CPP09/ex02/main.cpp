@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:09:52 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/27 12:13:03 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/28 19:55:27 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	main(int argc, char** argv)
 	try
 	{
 		PmergeMe pm(argc, argv);
-		
 	}
 	catch (PmergeMe::InvalidInputException& e)
 	{
