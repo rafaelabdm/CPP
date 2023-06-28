@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:59:47 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/27 12:58:17 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/28 19:51:11 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,15 @@ PmergeMe::PmergeMe(int size, char** args)
 	if (size < 2)
 		throw InvalidInputException();
 
+	for (int i = 1; i < size; i++)
+	{
+		for (int j = 0; args[i][j] != '\0'; j++)
+		{
+			if (!std::isdigit(args[i][j]))
+				throw InvalidInputException();
+		}
+	}
+	
 	//vector
 	gettimeofday(&vec_start, NULL);
 	initVector(size, args);
@@ -274,35 +283,4 @@ void	PmergeMe::printResult(void) const
 const char* PmergeMe::InvalidInputException::what() const throw()
 {
 	return "Exception: invalid input.";
-}
-
-void	PmergeMe::printVectorDebug(void) const
-{
-	std::cout << "original vector: ";
-	for (std::vector<int>::const_iterator it = _vector.begin(); it != _vector.end(); it++)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
-
-	// printar pares
-	std::cout << "pairs:\n";
-	for (std::vector< std::vector<int> >::const_iterator it = _vectorPairs.begin(); it != _vectorPairs.end(); it++)
-	{
-		std::cout << it[0][0] << " " << it[0][1] << std::endl;
-	}
-
-	std::cout << "s vector: ";
-	for (std::vector<int>::const_iterator it = _sVector.begin(); it != _sVector.end(); it++)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
-
-	std::cout << "pend vector: ";
-	for (std::vector<int>::const_iterator it = _pendVector.begin(); it != _pendVector.end(); it++)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 19:04:28 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/27 12:56:47 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/06/28 19:43:40 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ class PmergeMe
 	void	insertPendToSDeque(void);
 
 	void	printResult(void) const;
-	void	printVectorDebug(void) const;
 
 	class InvalidInputException : public std::exception
 	{
