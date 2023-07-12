@@ -6,7 +6,7 @@
 /*   By: rabustam <rabustam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 13:32:52 by rabustam          #+#    #+#             */
-/*   Updated: 2023/06/19 13:10:23 by rabustam         ###   ########.fr       */
+/*   Updated: 2023/07/12 14:36:25 by rabustam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int main(void)
 		for(unsigned int i = 0; i < myArray.size(); i++)
 			std::cout << "myArray[" << i << "] = " << myArray[i] << "\n";
 	}
-	catch (Array<std::string>::OutOfBoundsException& e)
+	catch (Array<int>::OutOfBoundsException& e)
 	{
 		std::cout << e.what();
 	}
@@ -114,7 +114,7 @@ int main(void)
 		for(unsigned int i = 0; i < myArray.size(); i++)
 			std::cout << "myArray[" << i << "] = " << myArray[i] << "\n";
 	}
-	catch (Array<std::string>::OutOfBoundsException& e)
+	catch (Array<float>::OutOfBoundsException& e)
 	{
 		std::cout << e.what();
 	}
